@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2) do
+ActiveRecord::Schema.define(version: 4) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "appoitments", force: :cascade do |t|
+    t.date     "date"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_appoitments_on_user_id", using: :btree
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "name"
+    t.text     "info"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_events_on_user_id", using: :btree
+  end
 
   create_table "examples", force: :cascade do |t|
     t.text     "text",       null: false
@@ -27,11 +46,14 @@ ActiveRecord::Schema.define(version: 2) do
     t.string   "email",           null: false
     t.string   "token",           null: false
     t.string   "password_digest", null: false
+    t.boolean  "provider",        null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["token"], name: "index_users_on_token", unique: true, using: :btree
   end
 
+  add_foreign_key "appoitments", "users"
+  add_foreign_key "events", "users"
   add_foreign_key "examples", "users"
 end

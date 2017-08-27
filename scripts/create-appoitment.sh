@@ -1,16 +1,15 @@
-#!/bin/bash
 
 API="${API_ORIGIN:-http://localhost:4741}"
-URL_PATH="/sign-in"
+URL_PATH="/appoitments"
 curl "${API}${URL_PATH}" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \
   --data '{
-    "credentials": {
-      "email": "jesseBrito@gmail.com",
-      "password": "praiacapital104",
-      "password_confirmation": "praiacapital104"
+    "appoitments": {
+      "id": 1,
+      "date": "2017-08-26",
+      "user_id": "1"
     }
   }'
 
