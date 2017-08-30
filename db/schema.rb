@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 4) do
     t.string   "email",           null: false
     t.string   "token",           null: false
     t.string   "password_digest", null: false
-    t.boolean  "provider",        null: false
+    t.boolean  "provider"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree

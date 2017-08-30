@@ -17,8 +17,8 @@ class AppoitmentsController < ApplicationController
 
   # POST /appoitments
   def create
-    binding.pry
-    Appoitment.create(appoitment_params)
+
+    # Appoitment.create(appoitment_params)
     @appoitment = Appoitment.new(appoitment_params)
 
     if @appoitment.save
@@ -30,7 +30,7 @@ class AppoitmentsController < ApplicationController
 
   # PATCH/PUT /appoitments/1
   def update
-    Appoitment.update(appoitment_params)
+    @appoitment.update(appoitment_params)
     if @appoitment.update(appoitment_params)
       render json: @appoitment
     else

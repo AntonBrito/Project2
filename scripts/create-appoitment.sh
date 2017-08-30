@@ -4,10 +4,10 @@ URL_PATH="/appoitments"
 curl "${API}${URL_PATH}" \
   --include \
   --request POST \
+  --header "Authorization: Token token=${TOKEN}" \
   --header "Content-Type: application/json" \
   --data '{
-    "appoitments": {
-      "id": 1,
+    "appoitment": {
       "date": "2017-08-26",
       "user_id": "1"
     }
