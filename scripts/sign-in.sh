@@ -13,5 +13,3 @@ curl "${API}${URL_PATH}" \
       "password_confirmation": "praiacapital104"
     }
   }'
-
-echo

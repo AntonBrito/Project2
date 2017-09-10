@@ -14,5 +14,3 @@ curl "${API}${URL_PATH}" \
       "provider": "'"${PROVIDER}"'"
     }
   }'
-
-echo

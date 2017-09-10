@@ -8,8 +8,8 @@ curl "${API}${URL_PATH}" \
   --header "Content-Type: application/json" \
   --data '{
     "appoitment": {
-      "date": "2017-08-26",
-      "user_id": "1"
+      "date": "'"${DATE}"'",
+      "user_id": "'"${USER_ID}"'"
     }
   }'
 
