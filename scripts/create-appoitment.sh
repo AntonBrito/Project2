@@ -1,5 +1,5 @@
-
-API="${API_ORIGIN:-http://localhost:4741}"
+API="${API_ORIGIN:-https://ondasuave.herokuapp.com}"
+# API="${API_ORIGIN:-http://localhost:4741}"
 URL_PATH="/appoitments"
 curl "${API}${URL_PATH}" \
   --include \

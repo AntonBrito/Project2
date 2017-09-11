@@ -1,6 +1,6 @@
 
-API="${API_ORIGIN:-http://localhost:4741}"
-# API="${API_ORIGIN:-https://ondasuave.herokuapp.com}"
+# API="${API_ORIGIN:-http://localhost:4741}"
+ API="${API_ORIGIN:-https://ondasuave.herokuapp.com}"
 URL_PATH="/events"
 curl "${API}${URL_PATH}" \
   --include \
